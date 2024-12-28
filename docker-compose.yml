@@ -1,0 +1,11 @@
+services:
+  ip_monitor:
+    build: .
+    container_name: ip_monitor
+    restart: always
+    env_file:
+      - .env
+    volumes:
+     - ./data:/app/data
+    environment:
+      - PYTHONUNBUFFERED=1  # Ensures unbuffered output
